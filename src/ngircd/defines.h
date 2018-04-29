@@ -151,17 +151,16 @@
 /* Read and write buffer sizes */
 
 /** Size of the read buffer of a connection in bytes. */
-#define READBUFFER_LEN 2048
+#define READBUFFER_LEN 65535
 
 /** Size that triggers write buffer flushing if more space is needed. */
 #define WRITEBUFFER_FLUSH_LEN 4096
 
 /** Maximum size of the write buffer of a connection in bytes. */
-#define WRITEBUFFER_MAX_LEN 32768
+#define WRITEBUFFER_MAX_LEN 1024000
 
 /** Maximum size of the write buffer of a server link connection in bytes. */
-#define WRITEBUFFER_SLINK_LEN 65536
-
+#define WRITEBUFFER_SLINK_LEN 1024000
 
 /* IRC/IRC+ protocol */
 
@@ -213,7 +212,7 @@
 #define MAX_HNDL_TARGETS 25
 
 /** Max. number of WHO replies. */
-#define MAX_RPL_WHO 25
+#define MAX_RPL_WHO 10000
 
 /** Max. number of WHOIS replies. */
 #define MAX_RPL_WHOIS 10

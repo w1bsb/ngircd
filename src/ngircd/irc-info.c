@@ -171,8 +171,8 @@ IRC_WHO_Channel(CLIENT *Client, CHANNEL *Chan, bool OnlyOps)
 			else
 				flags[0] = 'H';
 
-			if (is_ircop)
-				flags[1] = '*';
+			//if (is_ircop)
+			//	flags[1] = '*';
 
 			who_flags_qualifier(Client, Channel_UserModes(Chan, c),
 					    flags, sizeof(flags));
