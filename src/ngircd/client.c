@@ -1213,28 +1213,28 @@ Client_MyMaxUserCount( void )
 GLOBAL bool
 Client_IsValidNick(const char *Nick)
 {
-	const char *ptr;
-	static const char goodchars[] = ";0123456789-";
+     const char *ptr;
+     static const char badchars[] = ";-";
+     static const char goodchars[] = ";0123456789-";
 
-	assert (Nick != NULL);
+     assert (Nick != NULL);
 
-	if (strchr(goodchars, Nick[0]))
-		return false;
-	if (strlen(Nick ) >= Conf_MaxNickLength)
-		return false;
+     if (strchr(badchars, Nick[0]))
+         return false;
+     if (strlen(Nick ) >= Conf_MaxNickLength)
+         return false;
 
-	ptr = Nick;
-	while (*ptr) {
-		if (*ptr < 'A' && !strchr(goodchars, *ptr ))
-			return false;
-		if (*ptr > '}')
-			return false;
-		ptr++;
-	}
+     ptr = Nick;
+     while (*ptr) {
+         if (*ptr < 'A' && !strchr(goodchars, *ptr ))
+             return false;
+         if (*ptr > '}')
+             return false;
+         ptr++;
+     }
 
-	return true;
+     return true;
 } /* Client_IsValidNick */
-
 
 /**
  * Return pointer to "My_Whowas" structure.
