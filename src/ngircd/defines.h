@@ -151,7 +151,7 @@
 /* Read and write buffer sizes */
 
 /** Size of the read buffer of a connection in bytes. */
-#define READBUFFER_LEN 65535
+#define READBUFFER_LEN 1024000
 
 /** Size that triggers write buffer flushing if more space is needed. */
 #define WRITEBUFFER_FLUSH_LEN 4096
