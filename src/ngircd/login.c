@@ -131,11 +131,12 @@ Login_User(CLIENT * Client)
 	} else return CONNECTED;
 #else
 	/* Check global server password ... */
-	if (strcmp(Conn_Password(conn), Conf_ServerPwd) != 0) {
-		/* Bad password! */
+	/* if (strcmp(Conn_Password(conn), Conf_ServerPwd) != 0) {
+		*/ /* Bad password! */ /*
 		Client_Reject(Client, "Bad server password", false);
 		return DISCONNECTED;
-	}
+	} */ /* Mod for clients with password configured when no server password is configured */
+
 	return Login_User_PostAuth(Client);
 #endif
 }
