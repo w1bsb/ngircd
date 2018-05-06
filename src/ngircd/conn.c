@@ -1540,7 +1540,7 @@ Read_Request( CONN_ID Idx )
 {
 	ssize_t len;
 	static const unsigned int maxbps = COMMAND_LEN / 2;
-	char readbuf[READBUFFER_LEN];
+	char readbuf[131072];
 	time_t t;
 	CLIENT *c;
 	assert( Idx > NONE );
